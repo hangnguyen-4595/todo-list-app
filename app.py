@@ -27,3 +27,18 @@ if __name__ == "__main__":
     add_task("Học bài Git")
     add_task("Làm bài tập")
     list_tasks()
+
+
+# Thay đổi ds task
+def complete_task(index):
+    if 0 <= index < len(tasks):
+        tasks[index] += " ✅ (Hoàn thành)"
+        print(f"Đã đánh dấu hoàn thành: {tasks[index]}")
+    else:
+        print("Không tìm thấy công việc này.")
+if __name__ == "__main__":
+    add_task("Học Git")
+    add_task("Làm bài tập")
+    complete_task(0)
+    list_tasks()
+
