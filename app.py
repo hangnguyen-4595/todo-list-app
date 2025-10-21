@@ -29,7 +29,7 @@ if __name__ == "__main__":
     list_tasks()
 
 
-# Thay đổi ds task
+## Thay đổi ds task
 def complete_task(index):
     if 0 <= index < len(tasks):
         tasks[index] += " ✅ (Hoàn thành)"
@@ -42,3 +42,18 @@ if __name__ == "__main__":
     complete_task(0)
     list_tasks()
 
+#Xoá một công việc
+def delete_task(task_index):
+    if 0 <= task_index < len(tasks):
+        deleted_task = tasks.pop(task_index)
+        print(f"🗑️ Đã xóa công việc: {deleted_task['name']}")
+    else:
+        print("❌ Chỉ số không hợp lệ.")
+
+if __name__ == "__main__":
+    add_task("Học Git")
+    add_task("Làm bài Python")
+    list_tasks()
+    print("\n--- Sau khi xóa ---")
+    delete_task(0)
+    list_tasks()
